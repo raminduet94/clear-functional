@@ -30,14 +30,20 @@ function updateBalance(amount,isAdding){
 document.getElementById('deposit-button').addEventListener('click',function(){
     
     const amount = getInputValue('deposit-input');
-    updateTotal('deposit-total',amount);
-    updateBalance(amount,true);
+    if(amount>0){
+        updateTotal('deposit-total',amount);
+        updateBalance(amount,true);
+    }
+   
    
 });
 // handle Withdraw
 document.getElementById('withdraw-button').addEventListener('click',function(){
 const amount=getInputValue('withdraw-input');
+if(amount>0){
 updateTotal('withdraw-total',amount);
 updateBalance(amount,false);
+}
+
 
 });
